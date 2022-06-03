@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,36 +6,226 @@
     <title>Projetos</title>
 
 
-
-
     <style>
+        /* geral */
 
 
-        * {
+        html {
+            font-family: 'Open Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
             margin: 0;
-            padding: 0;
+        }
+
+
+        #laboratorio1 {
+
+            background-size: cover;
+        }
+
+        #laboratorio2 {
+
+
+            background-size: cover;
+        }
+
+        #laboratorio3 {
+
+
+            background-size: cover;
+        }
+
+        #laboratorio4 {
+
+
+            background-size: cover;
+        }
+
+        #padding-div {
+            height: 100px;
+        }
+
+
+        .container {
+            max-width: 1920px;
+            width: 100%;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        /* header */
+        .headercolor {
+            background-color: #5f6291;
+        }
+
+        header {
+
+            position: relative;
+            top: 0;
+            height: auto;
+            width: 100%;
+            background-color: black;
+        }
+
+        /* navbar */
+        nav {
+            position: relative;
+            top: 0;
+            left: 0;
+            height: 100px;
+            width: 100%;
+            z-index: 1;
+            background-color: #FFF;
+            border-bottom: 1px solid #CCC;
+        }
+
+        nav:after {
+            clear: both;
+            content: "";
+            display: block;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        .nav-container ul {
+            float: right;
+            height: 100px;
+            line-height: 100px;
+            margin: 0;
+        }
+
+        .nav-container ul li {
+            list-style: none;
+            float: left;
+            margin: 0 15px;
+            color: yellow;
+            height: 75px;
+        }
+
+        .nav-container ul li:hover {
+            border-bottom: 3px solid aqua;
 
         }
 
-        #estilo_titulo1 {
-            font-size: 40px;
+        .nav-container ul li a {
+            text-decoration: none;
+            color: #666;
+            transition: .5s;
+
+        }
+
+        .nav-container ul li a:hover {
+            color: aqua;
+
+
+        }
+
+
+        .flex-container {
+            display: flex;
+            background-color: rgba(185, 233, 255, 0.84);
+        }
+
+        .flex-container > div {
+            background-color: #f1f1f1;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+            justify-content: space-around; /* espaça os items de forma igual */
+            border-radius: 20px;
+            /* arredonda os cantos */
+            box-shadow: 5px 5px 15px #888888; /* cria sombra */
+
         }
 
 
         .estilo_titulo2 {
 
             font-size: 35px;
+            color: rgb(255, 255, 255);
+        }
+
+        .estilo_titulo3 {
+
+            font-size: 35px;
             color: rgba(0, 0, 0, 0.84);
         }
 
 
-        .estilo_textop1 {
-            font-size: 20px;
-            color: rgba(33, 28, 35, 0.84);
+        .first-info {
+            background-repeat: no-repeat;
+            background-size: cover;
         }
-.estilo_textop2 {
-            font-size: 17px;
+
+
+        .section-container {
+            padding: 50px 10%;
             color: rgb(255, 255, 255);
+        }
+
+        .section-licenciatura {
+            margin: 30px 0%;
+            font-size: 20px;
+
+
+        }
+
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+
+        main {
+            min-height: calc(100vh - 40px)
+        }
+
+        footer {
+            width: 100%;
+            bottom: 0;
+            background: white;
+        }
+
+
+        footer li {
+            list-style: none;
+        }
+
+        footer span {
+            height: 30px;
+            line-height: 30px;
+        }
+
+
+        .portfolioRodrigo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            grid-gap: 10px;
+            padding: 10px;
+
+        }
+
+
+        .img-container img {
+            width: 100%;
+        }
+
+
+        .aptidoes li {
+            margin: 10px;
         }
 
 
@@ -44,33 +235,223 @@
 </head>
 
 
+<body style="background-color:rgba(12,46,56,0.84);">
 
-<body style="background-color:rgba(99,161,125,0.84);">
-<h1 id="estilo_titulo1" >Programação Web: Laboratórios</h1>
+<header class="first-info sticky" id="header-id">
+    <nav id="nav-id">
+        <div class="nav-container">
+            <a href="layout.html">
+
+            </a>
+            <ul>
+
+                <li><a onclick=scrollToView("Laboratório1")>Laboratório 1</a></li>
+                <li><a onclick=scrollToView("Laboratório2")>Laboratório 2</a></li>
+                <li><a onclick=scrollToView("Laboratório3")>Laboratório 3</a></li>
+                <li><a onclick=scrollToView("Laboratório4")>Laboratório 4</a></li>
 
 
-<ul>
-<br>
-    <li><a href="lab1/pw.html" class="estilo_textop2"> Laboratório 1</a>: Conhecer a Internet com a minha primeira página Web</li>
-       </br>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+<main>
+    <h1 id="estilo_titulo1">Programação Web: Laboratórios</h1>
+    <section id="Laboratorio1">
+
+        <div class="section-container">
+            <h2 class="estilo_titulo3"> Laboratório 1</h2>
+
+
+            <div class="section-licenciatura">
+                <p>Neste primeiro laboratório tem como objetivo, criar uma página na Web,conhecer e analisar vários
+                    aspectos ligados com a Internet e o protocolo HTTP, Criará uma segunda páagina onde reportará
+                    tudo o que observou e o website ficará online num servidor na nuvem. Desta forma encontra-se
+                    abaixo as imagens e o link do trabalho:</p>
+                <a href="https://github.com/a22002264/pw-labs-rodrigosousa-a22002264">
+                    <span>Laboratório 1</span>
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+        <div class="section-container">
+            <div class="section-licenciatura">
+
+                <div class="portfolioRodrigo">
+                    <div class="img-container">
+                        <img src="{% static 'portfolio/images/lab1.1.png' %}" alt="Rodrigo Sousa">
+
+                    </div>
+
+                    <div class="img-container">
+
+                        <img src="{% static 'portfolio/images/lab1.2.png' %}" alt="Rodrigo Sousa">
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+    <section id="Laboratorio2">
+
+        <div class="section-container">
+            <h2 class="estilo_titulo3"> Laboratório 2</h2>
+
+
+            <div class="section-licenciatura">
+                <p>Neste segundo laboratório tem como objetivo, criar um website sobre uma cidade à sua escolha,
+                    onde irá aplicar os conceitos aprendidos sobre HTML adquiridos esta semana. Desta forma
+                    encontra-se abaixo as imagens e o link do trabalho:</p>
+                <a href="https://github.com/a22002264/pw-labs-rodrigosousa-a22002264">
+                    <span>Laboratório 2</span>
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+        <div class="section-container">
+
+            <div class="section-licenciatura">
+
+                <div class="portfolioRodrigo">
+                    <div class="img-container">
+                        <img src="{% static 'portfolio/images/lab2.1.png' %}" alt="Rodrigo Sousa">
+
+                    </div>
+                    <div class="img-container">
+                        <img src="{% static 'portfolio/images/lab2.2.png' %}" alt="Rodrigo Sousa">
+
+                    </div>
+                    <div class="img-container">
+                        <img src="{% static 'portfolio/images/lab2.3.png' %}" alt="Rodrigo Sousa">
+
+                    </div>
+                    <div class="img-container">
+                        <img src="{% static 'portfolio/images/lab2.4.png' %}" alt="Rodrigo Sousa">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+    <section id="Laboratorio3">
+
+        <div class="section-container">
+            <h2 class="estilo_titulo3"> Laboratório 3</h2>
+
+
+            <div class="section-licenciatura">
+
+                <p>Neste primeiro laboratório tem como objetivo, Estender o website criado no Laboratório 2 com mais
+                    algumas páginas.Explorar os vários tipos de entrada de formulário através da construção de um
+                    quizz sobre a cidade que escolheu.Praticar CSS, experimentando todos os seletores CSS
+                    aprendidos. O objetivo é conhecer os comandos de formatação. Desta forma encontra-se
+                    abaixo as imagens e o link do trabalho:</p>
+                <a href="https://github.com/a22002264/pw-labs-rodrigosousa-a22002264">
+                    <span>Laboratório 3</span>
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+        <div class="section-container">
+
+            <div class="section-licenciatura">
+
+                <div class="portfolioRodrigo">
+
+                    <div class="img-container">
+                        <img src="{% static 'portfolio/images/lab3.1.png' %}" alt="Rodrigo Sousa">
+
+                    </div>
+                    <div class="img-container">
+                        <img src="{% static 'portfolio/images/lab3.2.png' %}" alt="Rodrigo Sousa">
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+    <section id="laboratorio4">
+
+        <div class="section-container">
+            <h2 class="estilo_titulo3"> Laboratório 4</h2>
+
+
+            <div class="section-licenciatura">
+
+                <p>Neste primeiro laboratório tem como objetivo, criar uma única página HTML, ao estilo das Single
+                    Page Applications (SPA). Ou seja, tudo ficará numa única página, explorando com scroll down,
+                    aplicar os conceitos aprendidos de propriedades CSS, em especial flexbox e grid, assim como
+                    responsividade com media queries. Desta forma encontra-se
+                    abaixo as imagens e o link do trabalho:</p>
+                <a href="https://github.com/a22002264/pw-labs-rodrigosousa-a22002264">
+                    <span>Laboratório 4</span>
+                </a>
+
+
+            </div>
+
+
+        </div>
+        <div class="section-container">
+
+
+            <div class="section-licenciatura">
+
+                <div class="portfolioRodrigo">
+
+                    <div class="img-container">
+                        <img src="{% static 'portfolio/images/lab4.2.png' %}" alt="Rodrigo Sousa">
+
+                    </div>
+                    <div class="img-container">
+                        <img src="{% static 'portfolio/images/lab4.1.png' %}" alt="Rodrigo Sousa">
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+</main>
+
+
+<footer style="background-color:rgba(12,46,56,0.84);">
     <br>
-    <li><a href="lab2/index.html" class="estilo_textop2"> Laboratório 2</a>: Explorando o HTML com o meu primeiro site</li>
-      </br>
-   <br>
-    <li><a href="lab3/index.html" class="estilo_textop2"> Laboratório 3</a>: Quizz acerca da Cidade de Lisboa e HTML E CSS</li>
-       </br>
-<br>
-    <li><a href="lab4/index.html" class="estilo_textop2"> Laboratório 4</a>:  SPA com layout responsivo baseado em Flexbox e Grid</li>
-       </br>
-
-    </ul>
-
-
-
-<footer>
-          <br>
-        <p>Rodrigo Sousa, a22002264, Universidade de Lisboa de Humanidades e Tecnologias, 2022</p>
- </br>
-    </footer>
+    <p style="color: #FFFFFF">Rodrigo Sousa, a22002264, Universidade de Lisboa de Humanidades e Tecnologias, 2022</p>
+    </br>
+</footer>
 </body>
 </html>
