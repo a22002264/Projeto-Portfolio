@@ -1,0 +1,402 @@
+/* geral */
+html {
+    font-family: 'Open Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+#padding-div {
+    height: 100px;
+}
+
+
+.container {
+    max-width: 1920px;
+    width: 100%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* header */
+.headercolor {
+    background-color: #5f6291;
+}
+
+header {
+
+    position: relative;
+    top: 0;
+    height: auto;
+    width: 100%;
+    background-color: black;
+}
+
+/* navbar */
+nav {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100%;
+    z-index: 1;
+    background-color: #FFF;
+    border-bottom: 1px solid #CCC;
+}
+
+nav:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+.nav-container {
+    max-width: 1200px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.nav-container ul {
+    float: right;
+    height: 100px;
+    line-height: 100px;
+    margin: 0;
+}
+
+.nav-container ul li {
+    list-style: none;
+    float: left;
+    margin: 0 15px;
+    color: yellow;
+    height: 75px;
+}
+
+.nav-container ul li:hover {
+    border-bottom: 3px solid aqua;
+
+}
+
+.nav-container ul li a {
+    text-decoration: none;
+    color: #666;
+    transition: .5s;
+
+}
+
+.nav-container ul li a:hover {
+    color: aqua;
+
+
+}
+
+
+.flex-container {
+    display: flex;
+    background-color: rgba(185, 233, 255, 0.84);
+}
+
+.flex-container > div {
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    justify-content: space-around; /* espaça os items de forma igual */
+    border-radius: 20px;
+    /* arredonda os cantos */
+    box-shadow: 5px 5px 15px #888888; /* cria sombra */
+
+}
+
+
+.estilo_titulo1 {
+    font-size: 40px;
+}
+
+
+.estilo_titulo2 {
+
+    font-size: 35px;
+    color: rgb(255, 255, 255);
+}
+
+.estilo_titulo3 {
+
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.84);
+}
+
+.estilo_textop1 {
+    font-size: 20px;
+    color: rgba(33, 28, 35, 0.84);
+}
+
+.estilo_titulo8 {
+
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+}
+
+.estilo_textop3 {
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+
+
+}
+
+.estilo_textop7 {
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.84);
+
+
+}
+
+.estilo_textop9 {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.first-info {
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.estilo_textop5 {
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    padding: 25px;
+
+}
+
+
+
+
+#sobreMim {
+    background-image: url("../images/final.png");
+    background-size: cover;
+
+}
+
+#CartaRecomendacao {
+    background-image: url("../images/final.png");
+    background-size: cover;
+
+}
+
+#ProgressoAcademico {
+     background-image: url("../images/final.png");
+    background-size: cover;
+
+}
+
+#curriculo{
+
+        background-image: url("../images/imgemFundo.jpg");
+    background-size: cover;
+}
+#Informatica{
+background-image: url("../images/imgemFundo.jpg");
+    background-size: cover;
+}
+#ProgramacaoWeb{
+    background-image: url("../images/final.png");
+    background-size: cover;
+
+}
+#Projetos {
+    background-image: url("../images/final.png");
+    background-size: cover;
+
+}
+
+.section-container {
+    padding: 50px 10%;
+    color: rgb(255, 255, 255);
+}
+
+.section-licenciatura {
+    margin: 30px 0%;
+    font-size: 20px;
+
+
+}
+
+.section-cadeiras {
+    margin: 30px 0%;
+    font-size: 20px;
+
+}
+
+.estilo_textop4 {
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+}
+
+.estilo_ProgressoAcademico {
+    font-size: 35px;
+    color: rgba(0, 0, 0, 0.84);
+}
+.estilo_programacaoweb {
+    font-size: 35px;
+    color: rgb(255, 255, 255);
+}
+.licenciatura {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+
+.rodape {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+    padding: 10px;
+    margin: 0 100px;
+
+}
+
+main {
+    min-height: calc(100vh - 40px)
+}
+
+footer {
+    width: 100%;
+    bottom: 0;
+    background: white;
+}
+
+
+footer li {
+    list-style: none;
+}
+
+footer span {
+    height: 30px;
+    line-height: 30px;
+}
+
+.rodapeColuna {
+
+
+}
+
+.footer-item {
+    width: 300px;
+
+}
+
+.fab {
+    font-size: 30px;
+    margin-right: 10px;
+    float: left;
+}
+
+.cadeiras {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+    padding: 10px;
+
+}
+
+
+.educacao {
+
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.portfolioRodrigo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+    padding: 10px;
+
+}
+
+.educacaoTopicos {
+    line-height: 25px;
+    margin: 0;
+    font-size: 20px;
+
+
+}
+
+.ensinoBasicoeSecundario {
+    float: right;
+    width: 400px;
+
+    padding: 15px;
+    line-height: 35px;
+    margin: 0;
+}
+
+.aptidoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.img-container {
+    display: block;
+    margin: auto;
+    width: 90%;
+}
+.img-footer {
+    display: block;
+    margin: auto;
+    width: 90%;
+}
+.img-container img {
+    width: 100%;
+}
+
+.imagens {
+    background-image: url("../images/ejaf.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.imagemInformatica{
+     background-image: url("../images/blog1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.aptidoes li{
+     margin: 10px;
+}
+.fa, .fab, .fal, .far, .fas {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+   text-decoration: #666;
+}
+.fab {
+    font-size: 30px;
+    margin-right: 10px;
+    float: left;
+text-decoration: #666;
+}
