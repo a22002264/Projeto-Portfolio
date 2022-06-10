@@ -1,0 +1,349 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+
+
+    <style>
+        /* geral */
+
+
+        html {
+            font-family: 'Open Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+
+        #padding-div {
+            height: 100px;
+        }
+
+
+        .container {
+            max-width: 1920px;
+            width: 100%;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        header {
+
+            position: relative;
+            top: 0;
+            height: auto;
+            width: 100%;
+            background-color: black;
+        }
+
+        /* navbar */
+        nav {
+            position: relative;
+            top: 0;
+            left: 0;
+            height: 100px;
+            width: 100%;
+            z-index: 1;
+            background-color: #FFF;
+            border-bottom: 1px solid #CCC;
+        }
+
+        nav:after {
+            clear: both;
+            content: "";
+            display: block;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        .nav-container ul {
+            float: right;
+            height: 100px;
+            line-height: 100px;
+            margin: 0;
+        }
+
+        .nav-container ul li {
+            list-style: none;
+            float: left;
+            margin: 0 15px;
+            color: yellow;
+            height: 75px;
+        }
+
+        .nav-container ul li:hover {
+            border-bottom: 3px solid aqua;
+
+        }
+
+        .nav-container ul li a {
+            text-decoration: none;
+            color: #666;
+            transition: .5s;
+
+        }
+
+        .nav-container ul li a:hover {
+            color: aqua;
+
+
+        }
+
+
+        .flex-container {
+            display: flex;
+            background-color: rgba(185, 233, 255, 0.84);
+        }
+
+        .flex-container > div {
+            background-color: #f1f1f1;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+            justify-content: space-around; /* espaça os items de forma igual */
+            border-radius: 20px;
+            /* arredonda os cantos */
+            box-shadow: 5px 5px 15px #888888; /* cria sombra */
+
+        }
+
+
+        .estilo_titulo2 {
+
+            font-size: 35px;
+            color: rgb(255, 255, 255);
+        }
+
+        .estilo_titulo3 {
+
+            font-size: 35px;
+            color: rgba(0, 0, 0, 0.84);
+        }
+
+
+        .first-info {
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+
+        .section-container {
+            padding: 15px 12%;
+            color: rgb(255, 255, 255);
+        }
+
+        .section-licenciatura {
+            margin: 30px 0%;
+            font-size: 20px;
+
+
+        }
+
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+
+        main {
+            min-height: calc(100vh - 40px)
+        }
+
+        footer {
+            width: 100%;
+            bottom: 0;
+            background: white;
+        }
+
+
+        footer li {
+            list-style: none;
+        }
+
+        footer span {
+            height: 30px;
+            line-height: 30px;
+        }
+
+
+        .portfolioRodrigo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            grid-gap: 10px;
+            padding: 10px;
+
+        }
+
+
+        .img-container img {
+            width: 100%;
+        }
+
+
+        .aptidoes li {
+            margin: 10px;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        form {
+            font-family: Verdana, Tahoma, sans-serif;
+            font-size: 15px;
+            background-color: #CC3300;
+            max-width: 500px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            margin-left: 20px;
+            color: #66FFFF;
+            text-shadow: 5px 5px 5px black;
+        }
+
+        input, textarea {
+            width: 200px;
+            padding: 10px;
+            color: black;
+            margin-left: 20px;
+            margin-top: 10px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border: 1px solid;
+        }
+
+        input:hover, textarea:hover, input:focus, textarea:focus {
+            border-color: #000066;
+            box-shadow: 5px 0px 9px #FFFF00;
+            background-color: #66FFFF;
+            color: black;
+            font-weight: bold;
+        }
+
+        .enviar {
+            background-color: #66FFFF;
+            height: 40px;
+            width: 100px;
+            font-weight: bold;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border: 1px solid;
+            color: black;
+        }
+
+        textarea {
+            width: 400px;
+            height: 120px;
+            line-height: 20px;
+            max-width: 400px;
+        }
+
+        form label {
+            margin-left: 20px;
+            color: #FFFFFF;
+            font-weight: bold;
+        }
+    </style>
+
+
+</head>
+
+
+<body style="background-color:rgba(12,46,56,0.84);">
+
+<header class="first-info sticky" id="header-id">
+    <nav id="nav-id">
+        <div class="nav-container">
+            <a href="layout.html">
+
+            </a>
+            <ul>
+                <li><a href="{% url 'portfolio:projetos' %}" class="estilo_textop2">Projetos</a></li>
+                <li><a href="{% url 'portfolio:quizz' %}" class="estilo_textop2">Quizz</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+<main>
+
+    <html>
+
+
+    <body>
+<div class="section-container">
+
+    <h1>Blog</h1>
+   </div>
+<div class="section-container">
+
+    <h1>Postagem no Blog</h1>
+   </div>
+<div class="section-container">
+
+    <div class="section-container">
+
+        <label for="nome">Nome</label>
+        <input type="text" id="nomeid" placeholder="Nome" required="required" name="nome"/>
+
+
+    </div>
+
+    <div class="section-container">
+        <label for="fone">Telefone</label>
+        <input type="tel" id="foneid" placeholder="xx-xx-xx-xxx" name="fone"/>
+
+    </div>
+    <div class="section-container">
+        <label for="email">Email</label>
+        <input type="email" id="emailid" placeholder="email" name="email"/>
+
+    </div>
+<div class="section-container">
+    <textarea placeholder="Postar no Blog"></textarea>
+
+    <input type="submit" class="enviar" onclick="Enviar();" value="Enviar"/>
+ </div>
+  </div>
+    </body>
+    <script>
+
+        function Enviar() {
+
+            var nome = document.getElementById("nomeid");
+
+            if (nome.value !== "") {
+                alert('Obrigado sr(a) ' + nome.value + 'a sua postagem foi submtida com sucesso');
+            }
+
+        }
+
+
+    </script>
+    </html>
+</main>
+
+
+<footer style="background-color:rgba(12,46,56,0.84);">
+    <br>
+    <p style="color: #FFFFFF">Rodrigo Sousa, a22002264, Universidade de Lisboa de Humanidades e Tecnologias, 2022</p>
+    </br>
+</footer>
+</body>
+</html>

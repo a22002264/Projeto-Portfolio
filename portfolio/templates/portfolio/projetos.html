@@ -166,8 +166,18 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+  .img {
+            position: fixed;
+        }
 
-
+#title {
+            text-align: center;
+            padding: 0.8rem 0;
+            font-size: 3rem;
+            color: rgba(0, 0, 0, 0.84);
+            background: rgb(255, 255, 255);
+            font-family: 'Open Sans', sans-serif;
+        }
         .section-container {
             padding: 50px 10%;
             color: rgb(255, 255, 255);
@@ -228,7 +238,12 @@
             margin: 10px;
         }
 
-
+        h1 {
+            margin-bottom: 20px;
+            color: #66FFFF;
+            text-shadow: 5px 5px 5px black;
+            font-size: 40px;
+        }
     </style>
 
 
@@ -237,18 +252,19 @@
 
 <body style="background-color:rgba(12,46,56,0.84);">
 
+
 <header class="first-info sticky" id="header-id">
     <nav id="nav-id">
+
         <div class="nav-container">
+
             <a href="layout.html">
 
             </a>
             <ul>
 
-                <li><a onclick=scrollToView("Laboratório1")>Laboratório 1</a></li>
-                <li><a onclick=scrollToView("Laboratório2")>Laboratório 2</a></li>
-                <li><a onclick=scrollToView("Laboratório3")>Laboratório 3</a></li>
-                <li><a onclick=scrollToView("Laboratório4")>Laboratório 4</a></li>
+                <li><a href="{% url 'portfolio:blog' %}" class="estilo_textop2">Blog</a></li>
+                <li><a href="{% url 'portfolio:quizz' %}" class="estilo_textop2">Quizz</a></li>
 
 
             </ul>
@@ -262,7 +278,7 @@
     <section id="Laboratorio1">
 
         <div class="section-container">
-            <h2 class="estilo_titulo3"> Laboratório 1</h2>
+            <h1>Laboratório 1</h1>
 
 
             <div class="section-licenciatura">
@@ -307,7 +323,7 @@
     <section id="Laboratorio2">
 
         <div class="section-container">
-            <h2 class="estilo_titulo3"> Laboratório 2</h2>
+            <h1>Laboratório 2</h1>
 
 
             <div class="section-licenciatura">
@@ -357,7 +373,7 @@
     <section id="Laboratorio3">
 
         <div class="section-container">
-            <h2 class="estilo_titulo3"> Laboratório 3</h2>
+           <h1>Laboratório 3</h1>
 
 
             <div class="section-licenciatura">
@@ -403,7 +419,7 @@
     <section id="laboratorio4">
 
         <div class="section-container">
-            <h2 class="estilo_titulo3"> Laboratório 4</h2>
+            <h1>Laboratório 4</h1>
 
 
             <div class="section-licenciatura">
@@ -454,4 +470,101 @@
     </br>
 </footer>
 </body>
+<script>
+    var questionBank = [
+
+    {
+        question:  'Assinale a alternativa correta:',
+        option: ['HTML é um programa que favorece o desenvolvimento de arquivos CSS.', 'HTML e CSS são as tecnologias utilizadas na construção de páginas da Web: HTML (html e xhtml) para a estrutura, CSS para o estilo e layout, incluindo WebFonts.', 'Ambos são os conceitos fundamentais aplicados em dados abertos conectados.', 'Nenhuma das anteriores.'],
+        answer: 'All of the above'
+    },
+    {
+        question: 'Analise as recomendações abaixo, identificando se são corretas ou incorretas do ponto de vista construção de um site com acessibilidade e de acordo com o eMAG.' +
+                'I. É recomendável disponibilizar o bloco do conteúdo principal da página antes do bloco de menu.' + 'II. A validação de códigos HTML e das folhas de estilo é sugerida como passos de avaliação de acessibilidade.' + 'III. Assegure-se que cores como vermelho e verde sejam usadas para destacar elementos na página.',
+
+        option: [' Apenas I.', 'Apenas II.', 'Apenas III.', 'Apenas I e II.'],
+        answer: 'Apenas I e II.'
+    },
+    {
+        question: "HTML é uma linguagem de marcação que descreve a estrutura de um documento. Essa linguagem é utilizada para desenvolver páginas Web. Sobre o HTML seguem-se três afirmações:" + "I - Páginas criadas em HTML sempre são visualizadas da mesma forma em navegadores diferentes, mesmo quando executados em plataformas de hardware diferentes."
+                + "II - As páginas escritas em HTML são arquivos de texto no formato ASCII." + "III - O HTML possui um conjunto previamente definido de tags, no entanto o usuário pode criar as suas próprias tags.",
+
+        option: ['I.', 'II.',  'III.', 'I e II.'],
+        answer: 'I.'
+    }
+]
+
+var question = document.getElementById('question');
+var quizContainer = document.getElementById('quiz-container');
+var scorecard = document.getElementById('scorecard');
+var option0 = document.getElementById('option0');
+var option1 = document.getElementById('option1');
+var option2 = document.getElementById('option2');
+var option3 = document.getElementById('option3');
+var next = document.querySelector('.next');
+var points = document.getElementById('score');
+var span = document.querySelectorAll('span');
+var i = 0;
+var score = 0;
+
+
+function displayQuestion() {
+    for (var a = 0; a < span.length; a++) {
+        span[a].style.background = 'none';
+    }
+    question.innerHTML = 'Q.' + (i + 1) + ' ' + questionBank[i].question;
+    option0.innerHTML = questionBank[i].option[0];
+    option1.innerHTML = questionBank[i].option[1];
+    option2.innerHTML = questionBank[i].option[2];
+    option3.innerHTML = questionBank[i].option[3];
+    stat.innerHTML = "Question" + ' ' + (i + 1) + ' ' + 'of' + ' ' + questionBank.length;
+}
+
+
+function calcScore(e) {
+    if (e.innerHTML === questionBank[i].answer && score < questionBank.length) {
+        score = score + 1;
+        document.getElementById(e.id).style.background = 'limegreen';
+    } else {
+        document.getElementById(e.id).style.background = 'tomato';
+    }
+    setTimeout(nextQuestion, 300);
+}
+
+
+function nextQuestion() {
+    if (i < questionBank.length - 1) {
+        i = i + 1;
+        displayQuestion();
+    } else {
+        points.innerHTML = score + '/' + questionBank.length;
+        quizContainer.style.display = 'none';
+        scoreboard.style.display = 'block'
+    }
+}
+
+
+next.addEventListener('click', nextQuestion);
+
+
+function backToQuiz() {
+    location.reload();
+}
+
+
+function checkAnswer() {
+    var answerBank = document.getElementById('answerBank');
+    var answers = document.getElementById('answers');
+    answerBank.style.display = 'block';
+    scoreboard.style.display = 'none';
+    for (var a = 0; a < questionBank.length; a++) {
+        var list = document.createElement('li');
+        list.innerHTML = questionBank[a].answer;
+        answers.appendChild(list);
+    }
+}
+
+
+displayQuestion();
+</script>
 </html>

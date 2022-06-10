@@ -35,3 +35,6 @@ def quizzview(request):
 
 def projetosview(request):
     return render(request, 'portfolio/projetos.html')
+
+def blogview(request):
+    return render(request, 'portfolio/blog.html')

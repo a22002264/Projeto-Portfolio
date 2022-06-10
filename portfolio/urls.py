@@ -12,4 +12,5 @@ urlpatterns = [
     path('home', views.home_page_view, name='home'),
     path('quizz', views.quizzview, name='quizz'),
     path('projetos', views.projetosview, name='projetos'),
+    path('blog', views.blogview, name='blog'),
 ]
